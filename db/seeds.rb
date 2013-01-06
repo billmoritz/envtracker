@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Database.create( name: "None", port: "0", db_type: "None", version: "None" )
+Schema.create( name: "N/A", database_id: Database.first.id )
+Environment.create( name: "N/A" )
