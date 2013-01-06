@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  db_type: 
+  port: 3306
+  version:
+
+two:
+  name: MyString
+  db_type: 
+  port: 3306
+  version:

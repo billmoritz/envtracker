@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: oneschema
+  database_id: 1
+
+two:
+  name: twoschema
+  database_id: 2

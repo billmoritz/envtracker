@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  source: MyString
+  prod_mgr: MyString
+  lead_eng: MyString
+  test: MyString
+  test_result: MyString
+  config: MyString
+  notes: MyText
+
+two:
+  name: MyString
+  source: MyString
+  prod_mgr: MyString
+  lead_eng: MyString
+  test: MyString
+  test_result: MyString
+  config: MyString
+  notes: MyText

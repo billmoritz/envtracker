@@ -1,0 +1,35 @@
+<%- model_class = Application -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @application.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:source) %>:</strong></dt>
+  <dd><%= @application.source %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:prod_mgr) %>:</strong></dt>
+  <dd><%= @application.prod_mgr %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lead_eng) %>:</strong></dt>
+  <dd><%= @application.lead_eng %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:test) %>:</strong></dt>
+  <dd><%= @application.test %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:test_result) %>:</strong></dt>
+  <dd><%= @application.test_result %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:config) %>:</strong></dt>
+  <dd><%= @application.config %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:notes) %>:</strong></dt>
+  <dd><%= @application.notes %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              applications_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_application_path(@application), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              application_path(@application),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
