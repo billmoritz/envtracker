@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th>Schema</th>
       <th><%= model_class.human_attribute_name(:database_id) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -15,9 +14,8 @@
     <% @schemas.each do |schema| %>
       <% database = Database.find(schema.database_id) %>
       <tr>
-        <td><%= link_to schema.id, schema_path(schema) %></td>
-        <td><%= schema.name %></td>
-        <td><%= database.name %>:<%= database.port %></td>
+        <td><%= link_to schema.name, schema_path(schema) %></td>
+        <td><%= link_to "#{database.name}\:#{database.port}", database_path(database) %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_schema_path(schema), :class => 'btn btn-mini' %>

@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:port) %></th>
       <th><%= model_class.human_attribute_name(:db_type) %></th>
@@ -16,8 +15,7 @@
   <tbody>
     <% @databases.each do |database| %>
       <tr>
-        <td><%= link_to database.id, database_path(database) %></td>
-        <td><%= database.name %></td>
+        <td><%= link_to database.name, database_path(database) %></td>
         <td><%= database.port %></td>
         <td><%= database.db_type %></td>
         <td><%= database.version %></td>

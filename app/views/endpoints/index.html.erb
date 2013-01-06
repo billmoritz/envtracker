@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:version) %></th>
       <th><%= model_class.human_attribute_name(:application_id) %></th>
@@ -18,8 +17,7 @@
   <tbody>
     <% @endpoints.each do |endpoint| %>
       <tr>
-        <td><%= link_to endpoint.id, endpoint_path(endpoint) %></td>
-        <td><%= endpoint.name %></td>
+        <td><%= link_to endpoint.name, endpoint_path(endpoint) %></td>
         <td><%= endpoint.version %></td>
         <td><%= endpoint.application_id %></td>
         <td><%= endpoint.environment_id %></td>

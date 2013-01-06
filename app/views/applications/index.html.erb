@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:source) %></th>
       <th><%= model_class.human_attribute_name(:prod_mgr) %></th>
@@ -20,8 +19,7 @@
   <tbody>
     <% @applications.each do |application| %>
       <tr>
-        <td><%= link_to application.id, application_path(application) %></td>
-        <td><%= application.name %></td>
+        <td><%= link_to application.name, application_path(application) %></td>
         <td><%= application.source %></td>
         <td><%= application.prod_mgr %></td>
         <td><%= application.lead_eng %></td>
