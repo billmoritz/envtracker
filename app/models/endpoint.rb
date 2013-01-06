@@ -3,4 +3,9 @@ class Endpoint < ActiveRecord::Base
   belongs_to :application
   belongs_to :environment
   belongs_to :schema
+  validates :name, :presence => true
+  validates :versions, :presence => true
+  validates :application_id, :presence => true
+  validates :schema_id, :presence => true
+  validates :environment_id, :presence => true
 end
