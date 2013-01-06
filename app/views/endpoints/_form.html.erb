@@ -14,19 +14,19 @@
   <div class="control-group">
     <%= f.label :application_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :application_id, :class => 'number_field' %>
+      <%= f.select(:application_id, Application.all.collect {|a| [ a.name, a.id ] }, {:prompt => false}) %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :environment_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :environment_id, :class => 'number_field' %>
+      <%= f.select(:environment_id, Environment.all.collect {|e| [ e.name, e.id ] }, {:prompt => false}) %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :schema_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :schema_id, :class => 'number_field' %>
+      <%= f.select(:schema_id, Schema.all.collect {|s| [ s.name, s.id ] }, {:prompt => false}) %>
     </div>
   </div>
 
