@@ -14,6 +14,8 @@ Envtracker::Application.routes.draw do
   resources :applications
 
 
+  resources :requests
+
   devise_for :users
 
   # The priority is based upon order of creation:
