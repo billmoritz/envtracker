@@ -1,20 +1,7 @@
 Envtracker::Application.routes.draw do
-  resources :endpoints
+  resources :endpoints, :schemas, :databases, :environments, :applications, :requests
 
-
-  resources :schemas
-
-
-  resources :databases
-
-
-  resources :environments
-
-
-  resources :applications
-
-
-  resources :requests
+  match '/conf/:name' => 'environments#conf'
 
   devise_for :users
 

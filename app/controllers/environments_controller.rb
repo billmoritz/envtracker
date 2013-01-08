@@ -80,4 +80,17 @@ class EnvironmentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # GET /conf/name
+  # GET /conf/name.json
+  def conf
+    #name = params[:name]
+    @environment = Environment.find_by_name(params[:name])
+    #@environment = Environment.find(:all, :from => :endpoints, :params => { :name => name })
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @environment.endpoints }
+    end
+  end
 end
