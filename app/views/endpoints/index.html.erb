@@ -15,15 +15,12 @@
   </thead>
   <tbody>
     <% @endpoints.each do |endpoint| %>
-      <% application = Application.find(endpoint.application_id) %>
-      <% environment = Environment.find(endpoint.environment_id) %>
-      <% schema = Schema.find(endpoint.schema_id) %>
       <tr>
         <td><%= link_to endpoint.name, endpoint_path(endpoint) %></td>
         <td><%= endpoint.version %></td>
-        <td><%= link_to application.name, application_path(application) %></td>
-        <td><%= link_to environment.name, environment_path(environment) %></td>
-        <td><%= link_to schema.name, schema_path(schema) %></td>
+      <td><%= link_to endpoint.application.name, application_path(endpoint.application) %></td>
+      <td><%= link_to endpoint.environment.name, environment_path(endpoint.environment) %></td>
+      <td><%= link_to endpoint.schema.name, schema_path(endpoint.schema) %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_endpoint_path(endpoint), :class => 'btn btn-mini' %>
